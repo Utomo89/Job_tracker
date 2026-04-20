@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #f0f4ff;
+  --color-brand-100: #e0eaff;
+  --color-brand-200: #c4d4ff;
+  --color-brand-400: #6b8bff;
+  --color-brand-500: #4361ee;
+  --color-brand-600: #3451d1;
+  --color-brand-700: #2641b5;
+  --color-brand-900: #121d6b;
+
+  --color-surface-50: #f9f9fb;
+  --color-surface-100: #f2f2f7;
+  --color-surface-200: #e8e8f0;
+  --color-surface-300: #d1d1e0;
+  --color-surface-600: #6b6b80;
+  --color-surface-700: #4a4a60;
+  --color-surface-900: #16162a;
+
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-display: 'Syne', sans-serif;
+
+  --sidebar-width: 240px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-surface-50);
+  color: var(--color-surface-900);
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-surface-300); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-surface-600); }
