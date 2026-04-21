@@ -20,7 +20,7 @@ const today = () => new Date().toISOString().split('T')[0]
 // --- Section wrapper ---
 function Section({ title, icon: Icon, children }) {
   return (
-    <div className="bg-white rounded-2xl border border-[var(--color-surface-200)] overflow-hidden">
+    <div className="bg-[var(--color-card)] rounded-2xl border border-[var(--color-surface-200)] overflow-hidden">
       <div className="flex items-center gap-2.5 px-5 py-3.5 border-b border-[var(--color-surface-100)]">
         <div className="w-7 h-7 rounded-lg bg-[var(--color-brand-50)] flex items-center justify-center">
           <Icon size={14} className="text-[var(--color-brand-500)]" />

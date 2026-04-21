@@ -17,7 +17,7 @@ export default function ApplicationCard({ app, selected, onSelect }) {
     <div
       onClick={() => navigate(`/applications/${app.id}`)}
       className={`
-        group relative bg-white rounded-2xl border transition-all duration-150 cursor-pointer
+        group relative bg-[var(--color-card)] rounded-2xl border transition-all duration-150 cursor-pointer
         hover:shadow-md hover:shadow-black/5 hover:-translate-y-0.5
         ${selected
           ? 'border-[var(--color-brand-500)] ring-2 ring-[var(--color-brand-500)]/20'

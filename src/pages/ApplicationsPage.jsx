@@ -89,7 +89,7 @@ export default function ApplicationsPage() {
               Hapus {selected.length} Dipilih
             </Button>
           ) : (
-            <div className="flex rounded-xl overflow-hidden border border-[var(--color-surface-200)] bg-white">
+            <div className="flex rounded-xl overflow-hidden border border-[var(--color-surface-200)] bg-[var(--color-card)]">
               {VIEW_MODES.map(({ key, icon, label }) => (
                 <button
                   key={key}
@@ -168,7 +168,7 @@ export default function ApplicationsPage() {
         </div>
       ) : (
         /* ── TABLE VIEW ── */
-        <div className="bg-white border border-[var(--color-surface-200)] rounded-2xl overflow-hidden">
+        <div className="bg-[var(--color-card)] border border-[var(--color-surface-200)] rounded-2xl overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full text-[13px]">
               <thead>

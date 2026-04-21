@@ -1,5 +1,6 @@
-import { Menu, Bell } from 'lucide-react'
+import { Menu, Bell, Sun, Moon } from 'lucide-react'
 import { useLocation } from 'react-router-dom'
+import { useTheme } from '../../context/ThemeContext'
 
 const PAGE_TITLES = {
   '/': 'Dashboard',
@@ -16,21 +17,25 @@ function getTitle(pathname) {
 
 export default function Topbar({ onMenuClick }) {
   const { pathname } = useLocation()
+  const { dark, toggle } = useTheme()
   const title = getTitle(pathname)
 
   const today = new Intl.DateTimeFormat('id-ID', {
-    weekday: 'long',
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
+    weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',
   }).format(new Date())
 
   return (
-    <header className="h-14 bg-white border-b border-[var(--color-surface-200)] flex items-center px-4 gap-4 sticky top-0 z-10">
-      {/* Mobile menu toggle */}
+    <header
+      className="h-14 flex items-center px-4 gap-4 sticky top-0 z-10
+        border-b border-[var(--color-surface-200)]
+        bg-white/80 dark:bg-[#16162a]/80 backdrop-blur-md
+        transition-colors duration-200"
+    >
+      {/* Mobile hamburger */}
       <button
         onClick={onMenuClick}
-        className="lg:hidden p-1.5 rounded-lg text-[var(--color-surface-600)] hover:bg-[var(--color-surface-100)] transition-colors"
+        className="lg:hidden p-1.5 rounded-lg text-[var(--color-surface-600)]
+          hover:bg-[var(--color-surface-100)] transition-colors"
       >
         <Menu size={20} />
       </button>
@@ -49,13 +54,32 @@ export default function Topbar({ onMenuClick }) {
       </div>
 
       {/* Right actions */}
-      <div className="flex items-center gap-2">
-        <button className="relative p-2 rounded-lg text-[var(--color-surface-600)] hover:bg-[var(--color-surface-100)] transition-colors">
+      <div className="flex items-center gap-1">
+
+        {/* Dark mode toggle */}
+        <button
+          onClick={toggle}
+          title={dark ? 'Beralih ke Light Mode' : 'Beralih ke Dark Mode'}
+          className="p-2 rounded-lg text-[var(--color-surface-600)]
+            hover:bg-[var(--color-surface-100)] hover:text-[var(--color-surface-900)]
+            transition-all duration-150"
+        >
+          {dark
+            ? <Sun size={17} strokeWidth={2} />
+            : <Moon size={17} strokeWidth={2} />
+          }
+        </button>
+
+        <button
+          className="relative p-2 rounded-lg text-[var(--color-surface-600)]
+            hover:bg-[var(--color-surface-100)] transition-colors"
+        >
           <Bell size={17} />
         </button>
 
-        {/* Avatar placeholder */}
-        <div className="w-8 h-8 rounded-full bg-[var(--color-brand-500)] flex items-center justify-center text-white text-xs font-bold select-none">
+        {/* Avatar */}
+        <div className="w-8 h-8 rounded-full bg-[var(--color-brand-500)] flex items-center
+          justify-center text-white text-xs font-bold select-none ml-1">
           JT
         </div>
       </div>

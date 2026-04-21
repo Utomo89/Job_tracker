@@ -9,7 +9,7 @@ export default function FilterBar({
   total, filtered,
 }) {
   return (
-    <div className="bg-white border border-[var(--color-surface-200)] rounded-2xl p-4 space-y-3">
+    <div className="bg-[var(--color-card)] border border-[var(--color-surface-200)] rounded-2xl p-4 space-y-3">
       {/* Row 1 — search + reset */}
       <div className="flex gap-3">
         <div className="relative flex-1">

@@ -11,7 +11,7 @@ export default function DeleteDialog({ count, onConfirm, onCancel }) {
       />
 
       {/* Dialog */}
-      <div className="relative bg-white rounded-2xl shadow-xl w-full max-w-sm p-6 z-10">
+      <div className="relative bg-[var(--color-card)] rounded-2xl shadow-xl w-full max-w-sm p-6 z-10">
         <button
           onClick={onCancel}
           className="absolute top-4 right-4 text-[var(--color-surface-400)] hover:text-[var(--color-surface-700)] transition-colors"

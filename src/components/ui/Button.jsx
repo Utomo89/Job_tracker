@@ -5,7 +5,7 @@ const variants = {
     shadow-sm shadow-brand-500/20
   `,
   secondary: `
-    bg-white text-[var(--color-surface-700)] border border-[var(--color-surface-200)]
+    bg-[var(--color-card)] text-[var(--color-surface-700)] border border-[var(--color-surface-200)]
     hover:bg-[var(--color-surface-50)] active:bg-[var(--color-surface-100)]
   `,
   danger: `

@@ -32,7 +32,7 @@ export function FieldHint({ children }) {
 
 const inputBase = `
   w-full px-3 py-2.5 rounded-xl text-[14px] text-[var(--color-surface-900)]
-  bg-white border border-[var(--color-surface-200)]
+  bg-[var(--color-input-bg)] border border-[var(--color-surface-200)]
   placeholder:text-[var(--color-surface-300)]
   focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-500)]/30
   focus:border-[var(--color-brand-500)]
